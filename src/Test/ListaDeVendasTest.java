@@ -107,18 +107,15 @@ public class ListaDeVendasTest {
         itens.add(it3);
 
         String str = "[1-2-3.0,2-3-3.0,3-4-3.0]";
-
-        assertEquals(itens, lv.criaListaDeItens(str));
+        assertEquals(itens.toString(), lv.criaListaDeItens(str).toString());
     }
 
     @Test
     public void criaItemDaVenda() {
         ListaDeVendas lv = new ListaDeVendas();
-        Item it1 = new Item("1", 2, 3.0);
-
-        String str = "1-2-3.0";
-
-        assertEquals(it1, lv.criaItemDaVenda(str));
+        Item item = new Item("1", 2, 3.02);
+        String str = "1-2-3.02";
+        assertEquals(item.getId(), lv.criaItemDaVenda(str).getId());
     }
 
     @Test
@@ -152,16 +149,16 @@ public class ListaDeVendasTest {
         Venda venda = new Venda("01", itens, vendedor);
         lv.adicionaVendaNaLista(venda);
 
-        itens.clear();
+        ArrayList<Item> itens2 = new ArrayList<Item>();
 
         it1 = new Item("1", 5, 5.0);
         it2 = new Item("2", 4, 4.0);
         it3 = new Item("3", 3, 3.0);
-        itens.add(it1);
-        itens.add(it2);
-        itens.add(it3);
+        itens2.add(it1);
+        itens2.add(it2);
+        itens2.add(it3);
         Vendedor vendedor2 = new Vendedor("03", "Joao", 3000);
-        Venda venda2 = new Venda("02", itens, vendedor2);
+        Venda venda2 = new Venda("02", itens2, vendedor2);
         lv.adicionaVendaNaLista(venda2);
 
         assertEquals(venda2, lv.vendaMaisCara());
@@ -181,16 +178,16 @@ public class ListaDeVendasTest {
         Venda venda = new Venda("01", itens, vendedor);
         lv.adicionaVendaNaLista(venda);
 
-        itens.clear();
+        ArrayList<Item> itens2 = new ArrayList<Item>();
 
         it1 = new Item("1", 5, 5.0);
         it2 = new Item("2", 4, 4.0);
         it3 = new Item("3", 3, 3.0);
-        itens.add(it1);
-        itens.add(it2);
-        itens.add(it3);
+        itens2.add(it1);
+        itens2.add(it2);
+        itens2.add(it3);
         Vendedor vendedor2 = new Vendedor("03", "Joao", 3000);
-        Venda venda2 = new Venda("02", itens, vendedor2);
+        Venda venda2 = new Venda("02", itens2, vendedor2);
         lv.adicionaVendaNaLista(venda2);
 
         assertEquals(vendedor, lv.piorVendedor());
