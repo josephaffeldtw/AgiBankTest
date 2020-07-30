@@ -37,7 +37,14 @@ public class Item {
     }
 
     public double precoTotal(){
-        return 0;
+        return this.preco * this.quantidade;
     }
 
+    @Override
+    public String toString(){
+        return "\nIDItem: " + this.id +
+                "\nQuantidade: " + this.quantidade +
+                "\nPreço: " + this.preco +
+                "\nTotal: " + this.precoTotal();
+    }
 }

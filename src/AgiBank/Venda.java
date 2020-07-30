@@ -44,7 +44,18 @@ public class Venda {
     }
 
     public double valorTotalDaVenda(){
-        return 0;
+        double valor = 0;
+        for(Item it : itens){
+            valor = valor + it.precoTotal();
+        }
+        return valor;
+    }
+
+    @Override
+    public String toString() {
+        return "\nIDVenda: " + this.idSale +
+                "\nItens: " + this.itens +
+                "\nVendedor: " + this.vendedor.getNome();
     }
 
 }
