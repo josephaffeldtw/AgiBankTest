@@ -41,4 +41,10 @@ public class Cliente {
         this.area = area;
     }
 
+    @Override
+    public String toString() {
+        return "\nCNPJ: " + this.cnpj +
+                "\nNome: " + this.nome +
+                "\nArea: " + this.area;
+    }
 }

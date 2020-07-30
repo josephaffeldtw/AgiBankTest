@@ -40,4 +40,12 @@ public class Vendedor {
     public void setSalario(double salario) {
         this.salario = salario;
     }
+
+    @Override
+    public String toString() {
+        FormataStrings fs = new FormataStrings();
+        return "\nCPF: " + this.cpf +
+                "\nNome: " + this.nome +
+                "\nSalário: " + fs.formataParaMoedaReal(this.salario);
+    }
 }

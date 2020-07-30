@@ -53,9 +53,11 @@ public class Venda {
 
     @Override
     public String toString() {
+        FormataStrings fs = new FormataStrings();
         return "\nIDVenda: " + this.idSale +
                 "\nItens: " + this.itens +
-                "\nVendedor: " + this.vendedor.getNome();
+                "\nVendedor: " + this.vendedor.getNome() +
+                "\nValorTotal: " + fs.formataParaMoedaReal(this.valorTotalDaVenda());
     }
 
 }

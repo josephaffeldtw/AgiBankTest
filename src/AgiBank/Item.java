@@ -42,9 +42,10 @@ public class Item {
 
     @Override
     public String toString(){
+        FormataStrings fs = new FormataStrings();
         return "\nIDItem: " + this.id +
                 "\nQuantidade: " + this.quantidade +
-                "\nPreço: " + this.preco +
-                "\nTotal: " + this.precoTotal();
+                "\nPreço: " + fs.formataParaMoedaReal(this.preco) +
+                "\nTotal: " + fs.formataParaMoedaReal(this.precoTotal());
     }
 }
