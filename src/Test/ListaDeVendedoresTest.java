@@ -23,6 +23,21 @@ public class ListaDeVendedoresTest {
     }
 
     @Test
+    public void quantidadeDeVendedoresAdicionandoExistente() {
+        ListaDeVendedores lv = new ListaDeVendedores();
+        Vendedor vendedor1 = new Vendedor("01", "Jose", 2000);
+        Vendedor vendedor2 = new Vendedor("02", "Josue", 3000);
+        Vendedor vendedor3 = new Vendedor("03", "Josi", 4000);
+        Vendedor vendedor4 = new Vendedor("03", "Josi", 4000);
+        lv.adicionaVendedorNaLista(vendedor1);
+        lv.adicionaVendedorNaLista(vendedor2);
+        lv.adicionaVendedorNaLista(vendedor3);
+        lv.adicionaVendedorNaLista(vendedor4);
+
+        assertEquals(3, lv.quantidadeDeVendedores());
+    }
+
+    @Test
     public void adicionaVendedorNaLista() {
         ListaDeVendedores lv = new ListaDeVendedores();
         Vendedor vendedor1 = new Vendedor("01", "Jose", 2000);
