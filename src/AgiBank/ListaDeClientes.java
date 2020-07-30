@@ -19,16 +19,30 @@ public class ListaDeClientes {
     }
 
     public boolean adicionaClienteNaLista(Cliente cliente) {
+        System.out.println(cliente.toString());
+        if (buscaClientePeloCNPJ(cliente.getCnpj()) != null) {
+            return false;
+        } else {
+            clientes.add(cliente);
+        }
         return true;
     }
 
     public Cliente buscaClientePeloCNPJ(String cnpj) {
+        for (Cliente cliente : clientes) {
+            if (cliente.getCnpj().equals(cnpj)) {
+                return cliente;
+            }
+        }
         return null;
     }
 
     public Cliente buscarClientePeloNome(String nome) {
+        for (Cliente cliente : clientes) {
+            if (cliente.getNome().equals(nome)) {
+                return cliente;
+            }
+        }
         return null;
     }
-
-
 }
