@@ -3,6 +3,7 @@ package Test;
 import AgiBank.*;
 import org.junit.Test;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import static org.junit.Assert.*;
@@ -10,7 +11,7 @@ import static org.junit.Assert.*;
 public class ProcessaDadosTest {
 
     @Test
-    public void montaObjetoCliente() {
+    public void montaObjetoCliente() throws IOException {
         ArrayList<String> dados = new ArrayList<String>();
         ProcessaDados pd = new ProcessaDados();
         dados.add("001ç1234567891234çPedroç50000");
@@ -24,7 +25,7 @@ public class ProcessaDadosTest {
     }
 
     @Test
-    public void montaObjetoVendedor() {
+    public void montaObjetoVendedor() throws IOException {
         ArrayList<String> dados = new ArrayList<String>();
         ProcessaDados pd = new ProcessaDados();
         dados.add("001ç9876543216542çPauloç50000");
@@ -38,7 +39,7 @@ public class ProcessaDadosTest {
     }
 
     @Test
-    public void montaObjetoVendas() {
+    public void montaObjetoVendas() throws IOException {
         ArrayList<String> dados = new ArrayList<String>();
         ProcessaDados pd = new ProcessaDados();
         dados.add("001ç1234567891234çPedroç50000");
@@ -61,7 +62,7 @@ public class ProcessaDadosTest {
     }
 
     @Test
-    public void criaSaida() {
+    public void criaSaida() throws IOException {
         ArrayList<String> dados = new ArrayList<String>();
         ProcessaDados pd = new ProcessaDados();
         dados.add("001ç1234567891234çPedroç50000");
@@ -73,7 +74,7 @@ public class ProcessaDadosTest {
 
         pd.montaListaDeObjetos(dados);
 
-        String str = "\nQuantidade de Clientes: 2" +
+        String str = "Quantidade de Clientes: 2" +
                 "\nQuantidade de Vendedores: 2" +
                 "\nID venda mais cara: 10" +
                 "\nPior Vendedor: Paulo";

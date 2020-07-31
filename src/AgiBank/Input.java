@@ -2,9 +2,11 @@ package AgiBank;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.logging.*;
 
 public class Input {
 
+    private final static Logger looger = Logger.getLogger(Input.class.getName());
     ArrayList<String> arquivosLidos;
 
     public Input(){
@@ -21,13 +23,17 @@ public class Input {
                     arquivosLidos.add(linha);
                     linha = leArquivo.readLine();
                 }
+                looger.log(Level.INFO, "Arquivo lido");
                 return true;
-            } catch (FileNotFoundException ex) {
-                ex.printStackTrace();
-            } catch (IOException ex) {
-                ex.printStackTrace();
+            } catch (FileNotFoundException e) {
+                System.out.println("Erro: " + e.getMessage());
+                looger.log(Level.WARNING, "Arquivo Não foi lido: " + e.getMessage());
+            } catch (IOException e) {
+                System.out.println("Erro: " + e.getMessage());
+                looger.log(Level.WARNING, "Arquivo Não foi lido: " + e.getMessage());
             }
         }
+        looger.log(Level.INFO, "Arquivo não tem o formato .dat");
         return false;
     }
 
