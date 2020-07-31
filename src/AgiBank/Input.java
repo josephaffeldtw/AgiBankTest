@@ -1,7 +1,6 @@
 package AgiBank;
 
 import java.io.*;
-import java.sql.Array;
 import java.util.ArrayList;
 
 public class Input {
@@ -11,7 +10,6 @@ public class Input {
     public Input(){
         this.arquivosLidos = new ArrayList<String>();
     }
-
     public boolean leArquivo(File file) {
         if(arquivoValido(file)){
             try {

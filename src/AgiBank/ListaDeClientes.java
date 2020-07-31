@@ -19,7 +19,6 @@ public class ListaDeClientes {
     }
 
     public boolean adicionaClienteNaLista(Cliente cliente) {
-        System.out.println(cliente.toString());
         if (buscaClientePeloCNPJ(cliente.getCnpj()) != null) {
             return false;
         } else {

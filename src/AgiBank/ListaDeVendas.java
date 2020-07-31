@@ -10,7 +10,7 @@ public class ListaDeVendas {
         this.vendas = new ArrayList<Venda>();
     }
 
-    public ArrayList<Venda> getVendas() {
+    public ArrayList<Venda> getListaDeVendas() {
         return this.vendas;
     }
 
@@ -19,7 +19,6 @@ public class ListaDeVendas {
     }
 
     public boolean adicionaVendaNaLista(Venda venda) {
-        System.out.println(venda.toString());
         if (buscaVendaPelaIdSale(venda.getIdSale()) != null) {
             return false;
         } else {
