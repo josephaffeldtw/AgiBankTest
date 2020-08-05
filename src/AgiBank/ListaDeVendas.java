@@ -20,6 +20,7 @@ public class ListaDeVendas {
 
     public boolean adicionaVendaNaLista(Venda venda) {
         if (buscaVendaPelaIdSale(venda.getIdSale()) != null) {
+
             return false;
         } else {
             vendas.add(venda);
@@ -72,7 +73,7 @@ public class ListaDeVendas {
     }
 
     public Vendedor piorVendedor() {
-        double menorVenda;
+        double menorVenda = 0;
         Vendedor vendedor = null;
         if (existeVenda()) {
             if (vendas.size() == 1) {
@@ -90,5 +91,7 @@ public class ListaDeVendas {
         }
         return vendedor;
     }
+
+
 
 }

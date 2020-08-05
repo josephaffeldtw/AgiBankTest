@@ -11,7 +11,7 @@ public class InputTest {
     @Test
     public void leArquivo() {
         Input in = new Input();
-        File arq = new File("/home/joseph/data/in/arquivo1.dat");
+        File arq = new File("/home/joseph/data/in/arquivo2.dat");
         assertEquals(true, in.leArquivo(arq));
     }
 

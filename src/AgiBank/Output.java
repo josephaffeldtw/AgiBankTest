@@ -10,7 +10,6 @@ public class Output {
     private final static Logger looger = Logger.getLogger(Output.class.getName());
 
     public boolean geraSaida(String saida) throws IOException {
-        ProcessaDados pd = new ProcessaDados();
         boolean gerouSaida = false;
         String caminho = System.getProperty("user.home").concat("/data/out/");
         String nome = "analise.dat";

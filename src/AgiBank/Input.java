@@ -18,7 +18,6 @@ public class Input {
                 FileReader fr = new FileReader(file);
                 BufferedReader leArquivo = new BufferedReader(fr);
                 String linha = leArquivo.readLine();
-
                 while (linha != null) {
                     arquivosLidos.add(linha);
                     linha = leArquivo.readLine();

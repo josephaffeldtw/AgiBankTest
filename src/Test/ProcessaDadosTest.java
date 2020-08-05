@@ -12,8 +12,11 @@ public class ProcessaDadosTest {
 
     @Test
     public void montaObjetoCliente() throws IOException {
+        ListaDeVendedores vendedores = new ListaDeVendedores();
+        ListaDeClientes clientes = new ListaDeClientes();
+        ListaDeVendas vendas = new ListaDeVendas();
+        ProcessaDados pd = new ProcessaDados(vendedores, clientes, vendas);
         ArrayList<String> dados = new ArrayList<String>();
-        ProcessaDados pd = new ProcessaDados();
         dados.add("001ç1234567891234çPedroç50000");
         dados.add("002ç1234123412312331çJamilçRural");
         dados.add("002ç2345675434544345çJose da SilvaçRural");
@@ -26,8 +29,11 @@ public class ProcessaDadosTest {
 
     @Test
     public void montaObjetoVendedor() throws IOException {
+        ListaDeVendedores vendedores = new ListaDeVendedores();
+        ListaDeClientes clientes = new ListaDeClientes();
+        ListaDeVendas vendas = new ListaDeVendas();
+        ProcessaDados pd = new ProcessaDados(vendedores, clientes, vendas);
         ArrayList<String> dados = new ArrayList<String>();
-        ProcessaDados pd = new ProcessaDados();
         dados.add("001ç9876543216542çPauloç50000");
         dados.add("001ç1234567891234çPedroç50000");
         dados.add("001ç7894562354651çPedroç50000");
@@ -40,8 +46,11 @@ public class ProcessaDadosTest {
 
     @Test
     public void montaObjetoVendas() throws IOException {
+        ListaDeVendedores vendedores = new ListaDeVendedores();
+        ListaDeClientes clientes = new ListaDeClientes();
+        ListaDeVendas vendas = new ListaDeVendas();
+        ProcessaDados pd = new ProcessaDados(vendedores, clientes, vendas);
         ArrayList<String> dados = new ArrayList<String>();
-        ProcessaDados pd = new ProcessaDados();
         dados.add("001ç1234567891234çPedroç50000");
         dados.add("002ç2345675434544345çJose da SilvaçRural");
         dados.add("003ç08ç[1-34-10,2-33-1.50,3-40-0.10]çPaulo");
@@ -63,8 +72,11 @@ public class ProcessaDadosTest {
 
     @Test
     public void criaSaida() throws IOException {
+        ListaDeVendedores vendedores = new ListaDeVendedores();
+        ListaDeClientes clientes = new ListaDeClientes();
+        ListaDeVendas vendas = new ListaDeVendas();
+        ProcessaDados pd = new ProcessaDados(vendedores, clientes, vendas);
         ArrayList<String> dados = new ArrayList<String>();
-        ProcessaDados pd = new ProcessaDados();
         dados.add("001ç1234567891234çPedroç50000");
         dados.add("001ç3245678865434çPauloç40000.99");
         dados.add("002ç2345675434544345çJose da SilvaçRural");
