@@ -6,7 +6,7 @@
 # Motodologia
 - TDD
 
-#Regras de Negócio
+# Regras de Negócio
 - Leitura:
     - Só ira ler uma linha do arquivo se estiver com os dados no formato certo:
         - Vendedor: 001çCPFçNameçSalary;
