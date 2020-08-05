@@ -53,7 +53,7 @@ public class ProcessaDadosTest {
         ArrayList<String> dados = new ArrayList<String>();
         dados.add("001ç1234567891234çPedroç50000");
         dados.add("002ç2345675434544345çJose da SilvaçRural");
-        dados.add("003ç08ç[1-34-10,2-33-1.50,3-40-0.10]çPaulo");
+        dados.add("003ç08ç[1-34-10,2-33-1.50,3-40-0.10]çPedro");
 
         ArrayList<Item> itens = new ArrayList<Item>();
         Item it1 = new Item("1", 2, 3.0);

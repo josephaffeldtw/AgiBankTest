@@ -1,11 +1,13 @@
 package Test;
 
-import AgiBank.ListaDeVendedores;
-import AgiBank.Vendedor;
-import org.junit.Assert;
+import AgiBank.*;
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import java.io.IOException;
+import java.util.ArrayList;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 
 public class ListaDeVendedoresTest {
 
@@ -79,5 +81,27 @@ public class ListaDeVendedoresTest {
     public void buscaVendedorQueNaoExistePeloCPF() {
         ListaDeVendedores lv = new ListaDeVendedores();
         assertNull(lv.buscaVendedorPeloCPF("01"));
+    }
+
+    @Test
+    public void piorVendedor() throws IOException {
+        ArrayList<String> dados = new ArrayList<String>();
+        dados.add("001ç1234567891234çPedroç50000");
+        dados.add("001ç3245678865434çPauloç40000.99");
+        dados.add("002ç2345675434544345çJose da SilvaçRural");
+        dados.add("002ç2345675433444345çEduardo PereiraçRural");
+        dados.add("003ç10ç[1-10-100,2-30-2.50,3-40-3.10]çPaulo");
+        dados.add("003ç08ç[1-34-10,2-33-1.50,3-40-0.10]çPedro");
+        dados.add("003ç02ç[1-34-10,2-33-1.50,3-40-0.10]çPedro");
+        dados.add("003ç18ç[1-34-10,2-33-1.50,3-40-0.10]çPaulo");
+        ListaDeVendas lv = new ListaDeVendas();
+        ListaDeVendedores lve = new ListaDeVendedores();
+        ListaDeClientes lc = new ListaDeClientes();
+        ProcessaDados pd = new ProcessaDados(lve, lc, lv);
+        pd.montaListaDeObjetos(dados);
+
+        Vendedor vendedor = new Vendedor("1234567891234", "Pedro",50000);
+
+        assertEquals(vendedor.getCpf(), lve.vendedorQueMenosVendeu().getCpf());
     }
 }

@@ -6,11 +6,15 @@ public class Vendedor {
     private String cpf;
     private String nome;
     private double salario;
+    private int quantidadeDeVendas;
+    private double totalDeRendaGerado;
 
     public Vendedor(String cpf, String nome, double salario) {
         this.cpf = cpf;
         this.nome = nome;
         this.salario = salario;
+        this.quantidadeDeVendas = 0;
+        this.totalDeRendaGerado = 0;
     }
 
     public static String getId() {
@@ -29,6 +33,14 @@ public class Vendedor {
         return salario;
     }
 
+    public int getQuantidadeDeVendas() {
+        return quantidadeDeVendas;
+    }
+
+    public double getTotalDeLucroGerado() {
+        return totalDeRendaGerado;
+    }
+
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
@@ -41,11 +53,18 @@ public class Vendedor {
         this.salario = salario;
     }
 
+    public void gerarRenda(double valor) {
+        this.quantidadeDeVendas++;
+        this.totalDeRendaGerado = totalDeRendaGerado + valor;
+    }
+
     @Override
     public String toString() {
         FormataStrings fs = new FormataStrings();
         return "\nCPF: " + this.cpf +
                 "\nNome: " + this.nome +
-                "\nSalário: " + fs.formataParaMoedaReal(this.salario);
+                "\nSalário: " + fs.formataParaMoedaReal(this.salario) +
+                "\nTotal de Vendas feitas: " + this.quantidadeDeVendas +
+                "\nTotal de Renda Gerada: " + this.totalDeRendaGerado;
     }
 }

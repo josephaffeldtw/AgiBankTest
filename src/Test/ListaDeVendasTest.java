@@ -165,7 +165,7 @@ public class ListaDeVendasTest {
     }
 
     @Test
-    public void piorVendedor() {
+    public void piorVenda() {
         ListaDeVendas lv = new ListaDeVendas();
         ArrayList<Item> itens = new ArrayList<Item>();
         Item it1 = new Item("1", 2, 3.0);
@@ -190,6 +190,6 @@ public class ListaDeVendasTest {
         Venda venda2 = new Venda("02", itens2, vendedor2);
         lv.adicionaVendaNaLista(venda2);
 
-        assertEquals(vendedor, lv.piorVendedor());
+        assertEquals(vendedor, lv.piorVenda());
     }
 }

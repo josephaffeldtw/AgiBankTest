@@ -69,8 +69,8 @@ public class ProcessaDados {
         looger.log(Level.INFO, "Criando saida...");
         return "Quantidade de Clientes: " + this.clientes.quantidadeDeClientes() +
                 "\nQuantidade de Vendedores: " + this.vendedores.quantidadeDeVendedores() +
-                "\nID venda mais cara: " + this.vendas.vendaMaisCara().toString() +
-                "\nPior Vendedor: " + this.vendas.piorVendedor().toString();
+                "\nID venda mais cara: " + this.vendas.vendaMaisCara().getIdSale() +
+                "\nPior Vendedor: " + this.vendedores.vendedorQueMenosVendeu().getNome();
     }
 
     public ListaDeVendas getListaDeVendas(){

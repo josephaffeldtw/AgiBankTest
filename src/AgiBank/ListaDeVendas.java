@@ -1,10 +1,13 @@
 package AgiBank;
 
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ListaDeVendas {
 
     private ArrayList<Venda> vendas;
+    private final static Logger looger = Logger.getLogger(ListaDeVendas.class.getName());
 
     public ListaDeVendas() {
         this.vendas = new ArrayList<Venda>();
@@ -20,9 +23,10 @@ public class ListaDeVendas {
 
     public boolean adicionaVendaNaLista(Venda venda) {
         if (buscaVendaPelaIdSale(venda.getIdSale()) != null) {
-
+            looger.log(Level.WARNING, "Id da venda já existente, não é possível criar duas vendas com o mesmo id");
             return false;
         } else {
+            venda.getVendedor().gerarRenda(venda.valorTotalDaVenda());
             vendas.add(venda);
         }
         return true;
@@ -72,15 +76,17 @@ public class ListaDeVendas {
         return v;
     }
 
-    public Vendedor piorVendedor() {
+    public Vendedor piorVenda() {
         double menorVenda = 0;
         Vendedor vendedor = null;
+
         if (existeVenda()) {
             if (vendas.size() == 1) {
                 return vendas.get(0).getVendedor();
             } else {
                 menorVenda = vendas.get(0).valorTotalDaVenda();
                 vendedor = vendas.get(0).getVendedor();
+
                 for (int i = 1; i < vendas.size(); i++) {
                     if (vendas.get(i).valorTotalDaVenda() < menorVenda) {
                         menorVenda = vendas.get(i).valorTotalDaVenda();
@@ -91,7 +97,6 @@ public class ListaDeVendas {
         }
         return vendedor;
     }
-
 
 
 }

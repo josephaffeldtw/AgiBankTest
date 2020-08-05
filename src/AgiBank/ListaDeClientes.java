@@ -1,10 +1,13 @@
 package AgiBank;
 
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class ListaDeClientes {
 
     private ArrayList<Cliente> clientes;
+    private final static Logger looger = Logger.getLogger(ListaDeClientes.class.getName());
 
     public ListaDeClientes() {
         this.clientes = new ArrayList<Cliente>();
@@ -20,6 +23,7 @@ public class ListaDeClientes {
 
     public boolean adicionaClienteNaLista(Cliente cliente) {
         if (buscaClientePeloCNPJ(cliente.getCnpj()) != null) {
+            looger.log(Level.WARNING, "CNPJ já existente, não é possível criar dois clientes com o mesmo CNPJ");
             return false;
         } else {
             clientes.add(cliente);

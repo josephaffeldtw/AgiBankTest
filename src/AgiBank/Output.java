@@ -36,7 +36,7 @@ public class Output {
 
     public void criaArquivo(String caminho, String arq) throws IOException {
         File f = new File(caminho);
-        f.mkdir();
+        f.mkdirs();
         f = new File(caminho+arq);
         f.createNewFile();
     }
