@@ -33,13 +33,13 @@ public class ProcessaDados {
                         double salario = Double.parseDouble(s[3]);
                         vendedor = new Vendedor(s[1], s[2], salario);
                         vendedores.adicionaVendedorNaLista(vendedor);
-//                        looger.log(Level.INFO, "Criou vendedor " + vendedor.getNome() + " e adicionou na lista. ");
+                        looger.log(Level.INFO, "Criou vendedor " + vendedor.getNome() + " e adicionou na lista. ");
                         break;
 
                     case "002":
                         cliente = new Cliente(s[1], s[2], s[3]);
                         clientes.adicionaClienteNaLista(cliente);
-//                        looger.log(Level.INFO, "Criou cliente " + cliente.getNome()+ " e adicionou na lista. ");
+                        looger.log(Level.INFO, "Criou cliente " + cliente.getNome()+ " e adicionou na lista. ");
 
                         break;
 
@@ -48,7 +48,7 @@ public class ProcessaDados {
                             vendedor = vendedores.buscaVendedorPeloNome(s[3]);
                             venda = new Venda(s[1], vendas.criaListaDeItens(s[2]), vendedor);
                             vendas.adicionaVendaNaLista(venda);
-//                        looger.log(Level.INFO, "Criou venda" + venda.getIdSale() + " e adicionou na lista. ");
+                        looger.log(Level.INFO, "Criou venda" + venda.getIdSale() + " e adicionou na lista. ");
                         }else{
                             looger.log(Level.INFO, "Vendedor não existe impossível criar venda");
                         }
